@@ -121,9 +121,11 @@ set -o vi
 # add SWI-Prolog to PATH
 export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
 
-# set proxies
-export http_proxy=localhost:1087
-export https_proxy=localhost:1087
+# proxies
+export http_proxy=http://127.0.0.1:1087
+export https_proxy=https://127.0.0.1:1087
+
+# chruby setup
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.3

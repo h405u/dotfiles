@@ -5,6 +5,7 @@ return {
       level = 3,
       render = "minimal",
       stages = "static",
+      timeout = 10000,
     },
   },
 }
