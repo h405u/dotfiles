@@ -7,6 +7,7 @@ This is my dev setup on macOS 13.3.
 - zsh config
 - (neo)vim config
 - git config
+- etc
 
 ## Setup
 

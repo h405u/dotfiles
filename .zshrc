@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias saver="open -b com.apple.ScreenSaver.Engine"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -123,9 +124,15 @@ export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
 
 # proxies
 export http_proxy=http://127.0.0.1:1087
-export https_proxy=https://127.0.0.1:1087
+export https_proxy=http://127.0.0.1:1087
 
 # chruby setup
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.3
+
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export HOMEBREW_FORCE_BREWED_CURL=1
+
+export PATH="/opt/homebrew/Cellar/openjdk/20.0.2/bin:$PATH"
+export PATH="/opt/homebrew/Cellar/tomcat/10.1.13/bin:$PATH"
