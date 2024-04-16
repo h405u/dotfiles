@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -25,7 +22,7 @@ ZSH_THEME="spaceship"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -72,6 +69,9 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# COMPDUMP
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias saver="open -b com.apple.ScreenSaver.Engine"
+alias abl="conda activate abl"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -119,7 +120,7 @@ unset __conda_setup
 # vi mode
 set -o vi
 
-# add SWI-Prolog to PATH
+# SWI-Prolog
 export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
 
 # proxies
@@ -131,12 +132,16 @@ source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.3
 
+# homebrew curl
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 export HOMEBREW_FORCE_BREWED_CURL=1
 
+# jdk and tomcat
 export PATH="/opt/homebrew/Cellar/openjdk@11/11.0.21/bin:$PATH"
 export PATH="/opt/homebrew/Cellar/tomcat/10.1.13/bin:$PATH"
 
+# python3.12
 export PATH="/opt/homebrew/bin/python3.12/libexec/bin:$PATH"
 
-[ -f "/Users/shannonalan/.ghcup/env" ] && . "/Users/shannonalan/.ghcup/env" # ghcup-env
+# ghcup
+[ -f "/Users/shannonalan/.ghcup/env" ] && . "/Users/shannonalan/.ghcup/env"
