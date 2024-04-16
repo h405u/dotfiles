@@ -1,25 +1,18 @@
 # dotfiles
 
-This is my dev setup on macOS 13.3. 
+This is my command line configuration on macOS.
 
-## Contents
+It is for personal use so requirements are omitted. However, it should fit with ease as a minimal setup.
 
-- zsh config
-- (neo)vim config
-- git config
-- etc
+I commit regularly & at major changes.
 
-## Setup
-
-This repo is for personal use so requirements are omitted. However it is a minimal setup and should fit with ease.
+to setup:
 
 ```shell
 source setup.sh
 ```
 
-## Commit
-
-I'll commit regularly & at major changes.
+to commit:
 
 ```shell
 source commit.sh
