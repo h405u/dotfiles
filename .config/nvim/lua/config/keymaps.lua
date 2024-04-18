@@ -7,3 +7,10 @@ vim.keymap.del({ "n", "x" }, "<Down>")
 
 vim.keymap.set({ "n", "x" }, "j", "gj")
 vim.keymap.set({ "n", "x" }, "j", "gj")
+
+vim.keymap.set("n", "<C-c>", ":lua Count()<CR>", { noremap = true, silent = true })
+
+function Count()
+  vim.cmd("%s/\\w\\+//gn")
+  vim.cmd("%s/[\\u4e00-\\u9fa5\\u3040-\\u30FF]//gn")
+end
