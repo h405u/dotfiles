@@ -25,11 +25,11 @@ return {
           desc = "Harpoon Quick Menu",
         },
         {
-          "<leader>d",
+          "<leader>r",
           function()
             require("harpoon"):list():remove()
           end,
-          desc = "unHarpoon File",
+          desc = "Remove File",
         },
       }
 

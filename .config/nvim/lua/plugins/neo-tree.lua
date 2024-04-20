@@ -18,6 +18,7 @@ return {
       function()
         require("neo-tree.command").execute({
           toggle = true,
+          dir = LazyVim.root(),
           source = "buffers",
         })
       end,
