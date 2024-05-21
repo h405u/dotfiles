@@ -6,6 +6,7 @@ rm -rf .config/nvim
 rm -f .ideavimrc
 rm -f .condarc
 rm -rf .vim
+rm -f .alacritty.toml
 
 cp ~/.zshrc .zshrc
 cp ~/.zprofile .zprofile
@@ -15,6 +16,7 @@ cp -r ~/.config/nvim .config/
 cp ~/.ideavimrc .ideavimrc
 cp ~/.condarc .condarc
 cp -r ~/.vim .vim
+cp ~/.alacritty.toml .alacritty.toml
 
 git add .
 git commit -m "$(date)"

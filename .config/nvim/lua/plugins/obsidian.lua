@@ -1,4 +1,4 @@
-local vault = vim.fn.expand("~") .. "/unpublished"
+local vault = vim.fn.expand("~") .. "/Library/Mobile Documents/iCloud~md~obsidian/Documents/unpublished"
 local prefix = "<leader>o"
 
 return {

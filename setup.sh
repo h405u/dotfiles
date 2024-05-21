@@ -6,6 +6,7 @@ rm -rf ~/.config/nvim
 rm -rf ~/.vim
 rm -f ~/.ideavimrc
 rm -f ~/.condarc
+rm -f ~/.alacritty.toml
 
 cp .zshrc ~/.zshrc
 cp .vimrc ~/.vimrc
@@ -15,5 +16,6 @@ cp -r .config/nvim ~/.config/
 cp -r .vim ~/
 cp .ideavimrc ~/.ideavimrc
 cp .condarc ~/.condarc
+cp .alacritty.toml ~/.alacritty.toml
 
 source ~/.zshrc

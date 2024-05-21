@@ -38,13 +38,13 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -100,22 +100,6 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias saver="open -b com.apple.ScreenSaver.Engine"
-alias abl="conda activate abl"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/shannonalan/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/shannonalan/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/shannonalan/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/shannonalan/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # vi mode
 set -o vi
@@ -126,11 +110,6 @@ export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
 # proxies
 export http_proxy=http://127.0.0.1:1082
 export https_proxy=http://127.0.0.1:1082
-
-# chruby setup
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.3
 
 # homebrew curl
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
@@ -145,3 +124,8 @@ export PATH="/opt/homebrew/bin/python3.12/libexec/bin:$PATH"
 
 # ghcup
 [ -f "/Users/shannonalan/.ghcup/env" ] && . "/Users/shannonalan/.ghcup/env"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

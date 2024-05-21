@@ -10,7 +10,7 @@ return {
 
       -- Function definition for focusing on terminal application
       local function TexFocusVim()
-        vim.fn.system("open -a iTerm")
+        vim.fn.system("open -a Alacritty")
         vim.cmd("redraw!")
       end
 
