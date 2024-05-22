@@ -7,6 +7,7 @@ rm -f .ideavimrc
 rm -f .condarc
 rm -rf .vim
 rm -f .alacritty.toml
+rm -r .tmux.conf
 
 cp ~/.zshrc .zshrc
 cp ~/.zprofile .zprofile
@@ -17,6 +18,7 @@ cp ~/.ideavimrc .ideavimrc
 cp ~/.condarc .condarc
 cp -r ~/.vim .vim
 cp ~/.alacritty.toml .alacritty.toml
+cp ~/.tmux.conf .tmux.conf
 
 git add .
 git commit -m "$(date)"

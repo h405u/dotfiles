@@ -7,6 +7,7 @@ rm -rf ~/.vim
 rm -f ~/.ideavimrc
 rm -f ~/.condarc
 rm -f ~/.alacritty.toml
+rm -f ~/.tmux.conf
 
 cp .zshrc ~/.zshrc
 cp .vimrc ~/.vimrc
@@ -17,5 +18,6 @@ cp -r .vim ~/
 cp .ideavimrc ~/.ideavimrc
 cp .condarc ~/.condarc
 cp .alacritty.toml ~/.alacritty.toml
+cp .tmux.conf ~/.tmux.conf
 
 source ~/.zshrc
