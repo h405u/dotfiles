@@ -12,7 +12,7 @@
 	sslVerify = false
 	version = HTTP/2
 [user]
-	email = alan.hao.su@gmail.com
+	email = hs@imsuh.com
 	name = Hao Su
 [https]
 	proxy = localhost:1082

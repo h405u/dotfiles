@@ -5,5 +5,6 @@ return {
   { "catppuccin/catppuccin", enabled = false },
   { "akinsho/bufferline.nvim", enabled = false },
   { "CopilotC-Nvim/CopilotChat.nvim", enabled = false },
+  { "folke/noice.nvim", enabled = false },
   -- { "nvim-lualine/lualine.nvim", enabled = false },
 }

@@ -3,9 +3,8 @@ rm -f .zprofile
 rm -f .vimrc
 rm -f .gitconfig
 rm -rf .config/nvim
+rm -rf .config/karabiner
 rm -f .ideavimrc
-rm -f .condarc
-rm -rf .vim
 rm -f .alacritty.toml
 rm -r .tmux.conf
 
@@ -14,9 +13,8 @@ cp ~/.zprofile .zprofile
 cp ~/.vimrc .vimrc
 cp ~/.gitconfig .gitconfig
 cp -r ~/.config/nvim .config/
+cp -r ~/.config/karabiner .config/
 cp ~/.ideavimrc .ideavimrc
-cp ~/.condarc .condarc
-cp -r ~/.vim .vim
 cp ~/.alacritty.toml .alacritty.toml
 cp ~/.tmux.conf .tmux.conf
 

@@ -22,5 +22,8 @@ return {
         augroup END
       ]])
     end,
+    -- keys = {
+    --   { "<localLeader>l", "", group = "vimtex" },
+    -- },
   },
 }
