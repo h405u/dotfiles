@@ -11,7 +11,8 @@ Just my dotfiles for macOS, kept on GitHub for easy access when switching device
 5. node.js
 6. im-select
 7. lazygit
-8. else...
+8. ripgrep
+9. else...
 
 ## operations
 
