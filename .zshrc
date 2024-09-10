@@ -130,7 +130,7 @@ alias saver="open -b com.apple.ScreenSaver.Engine"
 set -o vi
 
 # SWI-Prolog
-# export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
+export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
 
 # proxies
 export http_proxy=http://127.0.0.1:1082

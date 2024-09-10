@@ -17,6 +17,3 @@ cp -r ~/.config/karabiner .config/
 cp ~/.ideavimrc .ideavimrc
 cp ~/.alacritty.toml .alacritty.toml
 cp ~/.tmux.conf .tmux.conf
-
-git add .
-git commit -m "$(date)"
