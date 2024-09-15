@@ -9,6 +9,7 @@ vim.keymap.set({ "n", "x" }, "j", "gj")
 vim.keymap.set({ "n", "x" }, "j", "gj")
 
 vim.keymap.set("n", "<C-c>", ":lua Count()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 function Count()
   vim.cmd("%s/\\w\\+//gn")
