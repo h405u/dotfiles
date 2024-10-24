@@ -152,3 +152,4 @@ export HOMEBREW_FORCE_BREWED_CURL=1
 # eval "$(pyenv init -)"
 
 source /opt/homebrew/opt/spaceship/spaceship.zsh
+export PATH="$PATH:$(yarn global bin)"

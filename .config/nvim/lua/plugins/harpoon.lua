@@ -1,16 +1,10 @@
 return {
   {
     "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    opts = {
-      menu = {
-        width = vim.api.nvim_win_get_width(0) - 4,
-      },
-    },
     keys = function()
       local keys = {
         {
-          "<leader>a",
+          "<leader>H",
           function()
             require("harpoon"):list():add()
           end,
