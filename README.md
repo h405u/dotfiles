@@ -12,12 +12,17 @@ Just my dotfiles for macOS, kept on GitHub for easy access when switching device
 6. im-select
 7. lazygit
 8. ripgrep
-9. else...
+9. fd
+10. else...
 
 ## operations
 
 ```shell
 source setup.sh
+```
+```shell
 source uninstall.sh
-source commit.sh
+```
+```shell
+source load.sh
 ```
