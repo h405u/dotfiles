@@ -8,3 +8,7 @@
 vim.o.wrap = true
 vim.g.vimtex_syntax_enabled = 0
 -- vim.o.spell = false
+
+vim.g.lazyvim_python_lsp = "pyright"
+
+-- vim.diagnostic.enable(false, ruffNamespaceId)

@@ -19,7 +19,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "hyphen",
+                                    "key_code": "enter",
                                     "modifiers": {
                                         "mandatory": ["control"],
                                         "optional": ["any"]
