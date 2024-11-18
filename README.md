@@ -6,7 +6,7 @@ Just my dotfiles, kept on GitHub for easy access when switching devices. Feel fr
 source install.sh
 ```
 
-## macOS (incomplete) requirements
+## (incomplete) Darwin requirements
 
 1. homebrew
 2. tmux
@@ -18,4 +18,14 @@ source install.sh
 8. ripgrep
 9. fd
 10. alacritty
-11. etc
+11. spaceship
+
+## (incomplete) Linux Requirements
+
+1. i3
+2. neovim
+3. tmux
+4. nerd font
+5. fd
+6. alacritty
+7. spaceship
