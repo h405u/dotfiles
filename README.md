@@ -1,8 +1,12 @@
 # dotfiles
 
-Just my dotfiles for macOS, kept on GitHub for easy access when switching devices. Use at your own risk.
+Just my dotfiles, kept on GitHub for easy access when switching devices. Feel free to use if you know what you are doing.
 
-## requirements
+```shell
+source install.sh
+```
+
+## macOS (incomplete) requirements
 
 1. homebrew
 2. tmux
@@ -13,16 +17,5 @@ Just my dotfiles for macOS, kept on GitHub for easy access when switching device
 7. lazygit
 8. ripgrep
 9. fd
-10. else...
-
-## operations
-
-```shell
-source setup.sh
-```
-```shell
-source uninstall.sh
-```
-```shell
-source load.sh
-```
+10. alacritty
+11. etc

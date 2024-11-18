@@ -12,7 +12,7 @@ return {
     ---@type conform.setupOpts
     local opts = {
       default_format_opts = {
-        timeout_ms = 3000,
+        timeout_ms = 30000,
         async = false, -- not recommended to change
         quiet = false, -- not recommended to change
         lsp_format = "fallback", -- not recommended to change
@@ -21,6 +21,11 @@ return {
         lua = { "stylua" },
         sh = { "shfmt" },
         tex = { "latexindent" },
+        python = { "black" },
+        json = { "clang-format" },
+        markdown = { "markdown-toc" },
+        html = { "prettier" },
+        css = { "prettier" },
       },
       -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.

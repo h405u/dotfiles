@@ -11,6 +11,8 @@ vim.keymap.set({ "n", "x" }, "j", "gj")
 vim.keymap.set("n", "<C-c>", ":lua Count()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+vim.keymap.set("n", "<leader>vd", ":lua vim.diagnostic.setqflist()<CR>", { desc = "diagnostic list" })
+
 function Count()
   vim.cmd("%s/\\w\\+//gn")
   vim.cmd("%s/[\\u4e00-\\u9fa5\\u3040-\\u30FF]//gn")

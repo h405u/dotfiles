@@ -12,3 +12,5 @@ vim.g.vimtex_syntax_enabled = 0
 vim.g.lazyvim_python_lsp = "pyright"
 
 -- vim.diagnostic.enable(false, ruffNamespaceId)
+
+-- vim.diagnostic.open_float({ focusable = true }, ...)
