@@ -10,7 +10,6 @@ for file in \
   .config/nvim \
   .config/karabiner \
   .config/i3 \
-  .config/yay \
 ; do
 
   SOURCE=$(pwd)/$(uname)/"$file"
