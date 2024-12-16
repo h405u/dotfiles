@@ -16,3 +16,7 @@ alias ls="ls --color=auto"
 bindkey -v
 
 source /usr/lib/spaceship-prompt/spaceship.zsh
+SPACESHIP_USER_SHOW=false
+SPACESHIP_HOST_SHOW=false
+SPACESHIP_ASYNC_SYMBOL=""
+SPACESHIP_ASYNC_SHOW_COUNT=false
