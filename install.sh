@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git switch $(uname)
+
 for file in \
   .zshrc \
   .tmux.conf \
@@ -9,10 +11,9 @@ for file in \
   .ideavimrc \
   .config/nvim \
   .config/karabiner \
-  .config/i3 \
-; do
+  .config/i3; do
 
-  SOURCE=$(pwd)/$(uname)/"$file"
+  SOURCE=$(pwd)/"$file"
   TARGET=~/"$file"
 
   if [ ! -e "$SOURCE" ]; then
