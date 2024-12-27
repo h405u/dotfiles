@@ -33,10 +33,6 @@ bindkey -v
 # SWI-Prolog
 export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
 
-# proxies
-export http_proxy=http://127.0.0.1:1082
-export https_proxy=http://127.0.0.1:1082
-
 # homebrew curl
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 export HOMEBREW_FORCE_BREWED_CURL=1
