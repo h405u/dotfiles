@@ -108,6 +108,11 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+vim.keymap.set("n", "<C-c>", ":!detex % | wc -w<CR>", { desc = "Latex word count" })
+
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

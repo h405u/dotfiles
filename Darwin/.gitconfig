@@ -8,11 +8,11 @@
 	directory = /opt/homebrew/Library/Taps/homebrew/homebrew-core
 	directory = /opt/homebrew/Library/Taps/homebrew/homebrew-cask
 [http]
-	proxy = localhost:1082
+	; proxy = localhost:1082
 	sslVerify = false
 	version = HTTP/2
 [user]
 	email = alan.hao.su@gmail.com
 	name = Hao Su
 [https]
-	proxy = localhost:1082
+	; proxy = localhost:1082
