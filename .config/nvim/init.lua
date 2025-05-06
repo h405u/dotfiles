@@ -76,6 +76,16 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+vim.cmd([[
+" Use Tab to expand and jump through snippets
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+
+" Use Shift-Tab to jump backwards through snippets
+imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+]])
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -108,7 +118,8 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
-vim.keymap.set("n", "<C-c>", ":!detex % | wc -w<CR>", { desc = "Latex word count" })
+vim.keymap.set("n", "<C-e>", ":!detex % | wc -w<CR>", { desc = "Latex word count" })
+vim.keymap.set("n", "<C-c>", ":%s/[一-龥]//gn<CR>", { desc = "Chinese word count" })
 
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
@@ -391,6 +402,7 @@ require("lazy").setup({
 
       -- Allows extra capabilities provided by nvim-cmp
       "hrsh7th/cmp-nvim-lsp",
+      "micangl/cmp-vimtex",
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -633,7 +645,7 @@ require("lazy").setup({
           lsp_format_opt = "fallback"
         end
         return {
-          timeout_ms = 500,
+          timeout_ms = 1000,
           lsp_format = lsp_format_opt,
         }
       end,
@@ -667,15 +679,12 @@ require("lazy").setup({
           return "make install_jsregexp"
         end)(),
         dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            "rafamadriz/friendly-snippets",
+            config = function()
+              require("luasnip.loaders.from_vscode").lazy_load()
+            end,
+          },
         },
       },
       "saadparwaiz1/cmp_luasnip",
@@ -690,8 +699,14 @@ require("lazy").setup({
       -- See `:help cmp`
       local cmp = require("cmp")
       local luasnip = require("luasnip")
-      luasnip.config.setup({})
-
+      luasnip.config.setup({
+        history = false,
+        enable_autosnippets = true,
+        store_selection_keys = "<Tab>",
+        region_check_events = "InsertEnter",
+        delete_check_events = "InsertLeave",
+      })
+      require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/luasnip/" } })
       cmp.setup({
         snippet = {
           expand = function(args)
@@ -748,9 +763,6 @@ require("lazy").setup({
               luasnip.jump(-1)
             end
           end, { "i", "s" }),
-
-          -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-          --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         }),
         sources = {
           {
@@ -761,11 +773,11 @@ require("lazy").setup({
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "path" },
+          { name = "vimtex" },
         },
       })
     end,
   },
-
   -- { -- You can easily change to a different colorscheme.
   -- 	-- Change the name of the colorscheme plugin below, and then
   -- 	-- change the command in the config to whatever the name of that colorscheme is.
