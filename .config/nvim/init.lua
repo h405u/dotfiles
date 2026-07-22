@@ -93,6 +93,15 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
+vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<CR>", { desc = "Lazy[G]it" })
+
+-- override default pasting
+vim.keymap.set("x", "p", '"_dP')
+
+-- for indentation
+vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -126,6 +135,16 @@ vim.keymap.set("n", "k", "gk")
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
+
+-- Automatically set the working directory to the file's location
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    local path = vim.fn.expand("%:p:h")
+    if vim.fn.isdirectory(path) == 1 then
+      vim.cmd("lcd " .. path) -- or use "cd" or "tcd" depending on scope
+    end
+  end,
+})
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -564,6 +583,26 @@ require("lazy").setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        pyright = {
+          handlers = {
+            ["textDocument/publishDiagnostics"] = function() end,
+          },
+          on_attach = function(client, _)
+            client.server_capabilities.codeActionProvider = false
+          end,
+          settings = {
+            pyright = {
+              disableOrganizeImports = true,
+            },
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                typeCheckingMode = "basic",
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },
@@ -645,7 +684,7 @@ require("lazy").setup({
           lsp_format_opt = "fallback"
         end
         return {
-          timeout_ms = 1000,
+          timeout_ms = 2000,
           lsp_format = lsp_format_opt,
         }
       end,

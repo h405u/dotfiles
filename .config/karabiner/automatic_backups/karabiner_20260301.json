@@ -80,15 +80,6 @@
                     },
                     "ignore": false,
                     "treat_as_built_in_keyboard": true
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 6920,
-                        "vendor_id": 2821
-                    },
-                    "ignore": false
                 }
             ],
             "name": "Default profile",

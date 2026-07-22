@@ -58,3 +58,7 @@ export PATH="$PATH:$(yarn global bin)"
 # ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# export http_proxy="http://127.0.0.1:7890"
+# export https_proxy="http://127.0.0.1:7890"
+export PATH="$HOME/bin:$PATH"

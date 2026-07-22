@@ -1,4 +1,3 @@
--- Return snippet tables
 return {
   s({ trig = ";a", snippetType = "autosnippet" }, {
     t("\\alpha"),
@@ -75,9 +74,9 @@ return {
   s({ trig = ";S", snippetType = "autosnippet" }, {
     t("\\Sigma"),
   }),
-  s({ trig = ";t", snippetType = "autosnippet" }, {
-    t("\\tau"),
-  }),
+  -- s({ trig = ";t", snippetType = "autosnippet" }, {
+  --   t("\\tau"),
+  -- }),
   s({ trig = ";f", snippetType = "autosnippet" }, {
     t("\\phi"),
   }),

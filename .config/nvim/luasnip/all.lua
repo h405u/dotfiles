@@ -1,4 +1,6 @@
 -- Place this in ${HOME}/.config/nvim/LuaSnip/all.lua
 return {
-  s({ trig = "foo" }, { t("Another snippet.") }),
+  s({ trig = ";td", snippetType = "autosnippet" }, {
+    t("# TODO: "),
+  }),
 }
